@@ -20,8 +20,9 @@ class TestClient < Test::Unit::TestCase
   end
 
   def test_raw_api_call
-    client = Buscape::Client.new(:application_id => @application_id, :sandbox => true)  
-    response = client.raw_api 'findCategoryList', :keyword => 'LG'    
+    client = Buscape::Client.new(:application_id => @application_id)  
+    response = client.raw_api 'findCategoryList', :keyword => 'LG'
+    debugger    
     assert_equal response.detail.status, 'success' #fixme API
   end
 

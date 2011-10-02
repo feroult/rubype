@@ -17,5 +17,6 @@ Gem::Specification.new do |s|
   s.bindir             = 'bin'
   s.executables        = []
 
+  s.add_dependency('json',  '>= 1.6.1')
   s.add_dependency('rest-client',  '>= 1.6.7')
 end

@@ -1,3 +1,4 @@
+# from buscape sandbox example: application_id = 62776d394f7650546c59383d
 unless ENV['BUSCAPE_APPLICATION_ID']
   $stderr.puts "Set BUSCAPE_APPLICATION_ID environment variable to your test application id"
   exit -1
@@ -5,6 +6,7 @@ end
 
 # helper file
 require 'test/unit'
+require 'ruby-debug'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))

@@ -1,8 +1,9 @@
+require 'json'
 require 'rest-client'
 
 module Support
   autoload :JSONHash, "support/json_hash"
-  autoload :RestClient, "support/rest_client"  
+  autoload :RestHelper, "support/rest_helper"  
 end
 
 module Buscape

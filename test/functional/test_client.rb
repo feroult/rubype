@@ -11,7 +11,7 @@ class TestClient < Test::Unit::TestCase
 
   def test_client_creation_sandbox
     client = Buscape::Client.new(:application_id => @application_id, :sandbox => true)  
-    assert_equal client.env, 'sandbox'  
+    assert client.sandbox
   end
 
   def text_client_creation_mexico

@@ -2,11 +2,11 @@ module Buscape
   class Client  
     include Support::RestHelper
   
-    attr_reader :application_id, :env, :country
+    attr_reader :application_id, :sandbox, :country
     
     def initialize(options = {})
       @application_id = options[:application_id]
-      @env = options[:sandbox] ? 'sandbox' : 'bws'            
+      @sandbox = options[:sandbox]
       @country = options[:country] ? options[:country] : 'br'
     end    
     
@@ -16,8 +16,12 @@ module Buscape
     end
         
     private 
-      def endpoint(service_name)
-        "http://#{@env}.buscape.com/service/#{service_name}/#{@application_id}/#{@country}/"
+      def endpoint(service_name)  
+        if @sandbox
+          "http://sandbox.buscape.com/service/#{service_name}/#{@application_id}/#{@country}/"
+        else
+          "http://bws.buscape.com/#{service_name}/#{@application_id}/#{@country}/"        
+        end
       end    
   end
 end
